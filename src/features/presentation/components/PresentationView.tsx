@@ -1,9 +1,11 @@
-import React from 'react';
-import { HeroSection } from '@/features/hero/components/HeroSection';
-import { PortfolioSection } from '@/features/portfolio/components/PortfolioSection';
-import { ContactSection } from '@/features/contact/components/ContactSection';
-import { SocialSidebar } from '@/features/navigation/components/SocialSidebar';
-import { ScrollIndicator } from '@/features/navigation/components/ScrollIndicator';
+import React, { useState } from 'react';
+import { PresentationCardFrame } from './PresentationCardFrame';
+import { PresentationHero } from './PresentationHero';
+import { PresentationPortfolio } from './PresentationPortfolio';
+import { PresentationContact } from './PresentationContact';
+import { ProjectModal } from '@/features/portfolio/components/ProjectModal';
+import { FEATURED_PROJECTS } from '@/core/constants/portfolio.constants';
+import type { ProjectItem } from '@/core/types/project.types';
 
 interface PresentationViewProps {
   onSuccessMessage: (name: string) => void;
@@ -14,66 +16,73 @@ export const PresentationView: React.FC<PresentationViewProps> = ({
   onSuccessMessage,
   onCopyNotice,
 }) => {
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+
+  const handleOpenFeatured = () => {
+    setSelectedProject(FEATURED_PROJECTS[1] || FEATURED_PROJECTS[0]);
+  };
+
+  const scrollToCard = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen w-full bg-presentation-texture py-16 px-4 sm:px-8 flex flex-col items-center">
-      {/* Presentation Top Title */}
-      <div className="mb-14 text-center">
-        <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-[0.25em] text-white uppercase drop-shadow-lg">
-          UI/UX DESIGNER
-        </h2>
+    <div className="min-h-screen w-full bg-presentation-texture py-12 sm:py-16 px-4 sm:px-8 flex flex-col items-center">
+      {/* Top Behance/Dribbble Title */}
+      <header className="mb-10 sm:mb-14 text-center">
+        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.2em] text-white uppercase drop-shadow-lg">
+          UI/UX DESINGER
+        </h1>
+      </header>
+
+      {/* Screen Mockup Card 1: Hero */}
+      <div id="card-hero" className="w-full flex justify-center">
+        <PresentationCardFrame
+          onNavigateProjects={() => scrollToCard('card-portfolio')}
+          onNavigateContact={() => scrollToCard('card-contact')}
+        >
+          <PresentationHero />
+        </PresentationCardFrame>
       </div>
 
-      {/* Mockup Frame 1: Hero Card */}
-      <div className="w-full max-w-5xl bg-[#1b353e] rounded-md border border-slate-700/60 shadow-2xl relative overflow-hidden mb-16 p-4 sm:p-8">
-        <div className="flex items-center justify-between mb-2 px-4 py-2 border-b border-white/5">
-          <span className="font-display text-xl font-bold text-white tracking-wider">HE</span>
-          <div className="flex gap-6 text-xs font-semibold tracking-widest text-slate-300">
-            <span>PROJECTS</span>
-            <span>CONTACT</span>
-          </div>
-        </div>
-        <HeroSection onExplore={() => {}} />
-        <SocialSidebar />
-        <ScrollIndicator />
+      {/* Screen Mockup Card 2: Portfolio */}
+      <div id="card-portfolio" className="w-full flex justify-center">
+        <PresentationCardFrame
+          onNavigateProjects={() => scrollToCard('card-portfolio')}
+          onNavigateContact={() => scrollToCard('card-contact')}
+        >
+          <PresentationPortfolio onViewProjects={handleOpenFeatured} />
+        </PresentationCardFrame>
       </div>
 
-      {/* Mockup Frame 2: Portfolio Card */}
-      <div className="w-full max-w-5xl bg-[#1b353e] rounded-md border border-slate-700/60 shadow-2xl relative overflow-hidden mb-16 p-4 sm:p-8">
-        <div className="flex items-center justify-between mb-2 px-4 py-2 border-b border-white/5">
-          <span className="font-display text-xl font-bold text-white tracking-wider">HE</span>
-          <div className="flex gap-6 text-xs font-semibold tracking-widest text-slate-300">
-            <span>PROJECTS</span>
-            <span>CONTACT</span>
-          </div>
-        </div>
-        <PortfolioSection />
-        <SocialSidebar />
-        <ScrollIndicator />
+      {/* Screen Mockup Card 3: Contact */}
+      <div id="card-contact" className="w-full flex justify-center">
+        <PresentationCardFrame
+          onNavigateProjects={() => scrollToCard('card-portfolio')}
+          onNavigateContact={() => scrollToCard('card-contact')}
+        >
+          <PresentationContact
+            onSuccessMessage={onSuccessMessage}
+            onCopyNotice={onCopyNotice}
+          />
+        </PresentationCardFrame>
       </div>
 
-      {/* Mockup Frame 3: Contact Card */}
-      <div className="w-full max-w-5xl bg-[#1b353e] rounded-md border border-slate-700/60 shadow-2xl relative overflow-hidden mb-16 p-4 sm:p-8">
-        <div className="flex items-center justify-between mb-2 px-4 py-2 border-b border-white/5">
-          <span className="font-display text-xl font-bold text-white tracking-wider">HE</span>
-          <div className="flex gap-6 text-xs font-semibold tracking-widest text-slate-300">
-            <span>PROJECTS</span>
-            <span>CONTACT</span>
-          </div>
-        </div>
-        <ContactSection
-          onSuccessMessage={onSuccessMessage}
-          onCopyNotice={onCopyNotice}
-        />
-        <SocialSidebar />
-        <ScrollIndicator />
-      </div>
-
-      {/* Presentation Bottom Footer */}
-      <div className="mt-8 mb-6 text-center">
+      {/* Presentation Bottom Callout */}
+      <footer className="mt-4 mb-8 text-center">
         <p className="font-display text-2xl sm:text-3xl font-bold tracking-wider text-white">
           Thanks for watching
         </p>
-      </div>
+      </footer>
+
+      {/* Project Case Study Dialog */}
+      <ProjectModal
+        project={selectedProject}
+        projects={FEATURED_PROJECTS}
+        onClose={() => setSelectedProject(null)}
+        onSelectProject={setSelectedProject}
+      />
     </div>
   );
 };
