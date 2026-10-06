@@ -1,33 +1,25 @@
-import React, { useEffect } from 'react';
-import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
-import type { ProjectItem } from '@/core/types/project.types';
+import { useEffect } from 'react'
+import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
 
-interface ProjectModalProps {
-  project: ProjectItem | null;
-  projects: readonly ProjectItem[];
-  onClose: () => void;
-  onSelectProject: (project: ProjectItem) => void;
-}
-
-export const ProjectModal: React.FC<ProjectModalProps> = ({
+export const ProjectModal = ({
   project,
   projects,
   onClose,
   onSelectProject,
 }) => {
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [onClose])
 
-  if (!project) return null;
+  if (!project) return null
 
-  const currentIndex = projects.findIndex((p) => p.id === project.id);
-  const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length];
-  const nextProject = projects[(currentIndex + 1) % projects.length];
+  const currentIndex = projects.findIndex((p) => p.id === project.id)
+  const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length]
+  const nextProject = projects[(currentIndex + 1) % projects.length]
 
   return (
     <div
@@ -52,7 +44,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-md text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors"
+            className="p-1.5 rounded-md text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer"
             aria-label="Close dialog"
           >
             <X className="w-5 h-5" />
@@ -107,14 +99,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={() => onSelectProject(prevProject)}
-              className="p-2 rounded border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-2 rounded border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label="Previous project"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => onSelectProject(nextProject)}
-              className="p-2 rounded border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-2 rounded border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label="Next project"
             >
               <ChevronRight className="w-4 h-4" />
@@ -135,5 +127,5 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

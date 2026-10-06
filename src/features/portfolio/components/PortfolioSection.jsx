@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import { FEATURED_PROJECTS } from '@/core/constants/portfolio.constants';
-import type { ProjectItem } from '@/core/types/project.types';
-import { ProjectCard } from './ProjectCard';
-import { PortfolioOverlay } from './PortfolioOverlay';
-import { ProjectModal } from './ProjectModal';
+import { useState } from 'react'
+import { FEATURED_PROJECTS } from '@/core/constants/portfolio.constants'
+import { ProjectCard } from './ProjectCard'
+import { PortfolioOverlay } from './PortfolioOverlay'
+import { ProjectModal } from './ProjectModal'
 
-export const PortfolioSection: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+export const PortfolioSection = () => {
+  const [selectedProject, setSelectedProject] = useState(null)
 
   const handleOpenFeatured = () => {
     // Open the center showcase project by default
-    const centerProject = FEATURED_PROJECTS.find((p) => p.aspect === 'tall') || FEATURED_PROJECTS[0];
-    setSelectedProject(centerProject);
-  };
+    const centerProject = FEATURED_PROJECTS.find((p) => p.aspect === 'tall') || FEATURED_PROJECTS[0]
+    setSelectedProject(centerProject)
+  }
 
   return (
     <section
@@ -44,5 +43,5 @@ export const PortfolioSection: React.FC = () => {
         onSelectProject={setSelectedProject}
       />
     </section>
-  );
-};
+  )
+}

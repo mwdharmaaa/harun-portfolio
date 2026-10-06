@@ -1,19 +1,10 @@
-import React from 'react';
-import type { ProjectItem } from '@/core/types/project.types';
-
-interface ProjectCardProps {
-  project: ProjectItem;
-  index: number;
-  onSelect: (project: ProjectItem) => void;
-  compact?: boolean;
-}
-
-export const ProjectCard: React.FC<ProjectCardProps> = ({
+export const ProjectCard = ({
   project,
+  index: _index,
   onSelect,
   compact = false,
 }) => {
-  const isCenter = project.aspect === 'tall';
+  const isCenter = project.aspect === 'tall'
 
   const sizeClasses = compact
     ? isCenter
@@ -21,7 +12,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       : 'w-20 sm:w-28 md:w-32 h-28 sm:h-36 md:h-44 opacity-90 hover:opacity-100 ring-1 ring-white/10'
     : isCenter
       ? 'w-44 sm:w-60 md:w-72 h-64 sm:h-84 md:h-96 z-10 -translate-y-3 sm:-translate-y-6 shadow-2xl shadow-black/80 ring-1 ring-white/15'
-      : 'w-36 sm:w-52 md:w-60 h-52 sm:h-72 md:h-84 opacity-90 hover:opacity-100 ring-1 ring-white/10';
+      : 'w-36 sm:w-52 md:w-60 h-52 sm:h-72 md:h-84 opacity-90 hover:opacity-100 ring-1 ring-white/10'
 
   return (
     <div
@@ -31,8 +22,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onSelect(project);
+          e.preventDefault()
+          onSelect(project)
         }
       }}
       aria-label={`View ${project.title}`}
@@ -55,5 +46,5 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </span>
       </div>
     </div>
-  );
-};
+  )
+}
