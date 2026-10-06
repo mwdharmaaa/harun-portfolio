@@ -6,7 +6,7 @@ export const NAV_ITEMS: readonly NavItem[] = [
 ] as const;
 
 export const SOCIAL_LINKS: readonly SocialLink[] = [
-  { id: 'github', name: 'GitHub', url: 'https://github.com/mwdharmaaa', icon: 'github' },
+  { id: 'facebook', name: 'Facebook', url: 'https://facebook.com', icon: 'facebook' },
   { id: 'instagram', name: 'Instagram', url: 'https://instagram.com', icon: 'instagram' },
   { id: 'twitter', name: 'X / Twitter', url: 'https://x.com', icon: 'twitter' },
-] as const;
+];

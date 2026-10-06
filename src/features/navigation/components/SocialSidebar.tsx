@@ -2,26 +2,39 @@ import React from 'react';
 import { SOCIAL_LINKS } from '@/core/constants/navigation.constants';
 import { FacebookIcon, InstagramIcon, TwitterIcon, GithubIcon } from './SocialIcons';
 
-export const SocialSidebar: React.FC = () => {
+interface SocialSidebarProps {
+  position?: 'fixed' | 'absolute';
+  compact?: boolean;
+}
+
+export const SocialSidebar: React.FC<SocialSidebarProps> = ({
+  position = 'fixed',
+  compact = false,
+}) => {
   const renderIcon = (type: string) => {
     switch (type) {
       case 'github':
-        return <GithubIcon className="w-4 h-4" />;
+        return <GithubIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
       case 'instagram':
-        return <InstagramIcon className="w-4 h-4" />;
+        return <InstagramIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
       case 'twitter':
-        return <TwitterIcon className="w-4 h-4" />;
+        return <TwitterIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
       default:
-        return <FacebookIcon className="w-4 h-4" />;
+        return <FacebookIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
     }
   };
 
+  const positionClasses =
+    position === 'absolute'
+      ? 'absolute left-4 sm:left-8 md:left-10 bottom-4 sm:bottom-8 z-20'
+      : 'fixed left-6 sm:left-10 md:left-14 bottom-8 sm:bottom-12 z-40';
+
   return (
     <aside
-      className="fixed left-6 sm:left-10 md:left-14 bottom-8 sm:bottom-12 z-40 flex flex-col items-center gap-5 pointer-events-auto"
+      className={`${positionClasses} flex flex-col items-center pointer-events-auto`}
       aria-label="Social Profiles"
     >
-      <div className="flex flex-col gap-4">
+      <div className={`flex flex-col ${compact ? 'gap-2.5' : 'gap-3 sm:gap-4'}`}>
         {SOCIAL_LINKS.map((link) => (
           <a
             key={link.id}
@@ -29,7 +42,7 @@ export const SocialSidebar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.name}
-            className="text-slate-400 hover:text-white transition-all transform hover:-translate-y-0.5 hover:scale-110 p-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
+            className="text-[#7e99a6] hover:text-white transition-all transform hover:-translate-y-0.5 hover:scale-110 p-0.5 focus:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
           >
             {renderIcon(link.icon)}
           </a>

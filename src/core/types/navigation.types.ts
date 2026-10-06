@@ -8,7 +8,7 @@ export interface SocialLink {
   id: string;
   name: string;
   url: string;
-  icon: 'github' | 'instagram' | 'twitter' | 'linkedin' | 'dribbble';
+  icon: 'facebook' | 'github' | 'instagram' | 'twitter' | 'linkedin' | 'dribbble';
 }
 
 export type ViewMode = 'immersive' | 'showcase';
