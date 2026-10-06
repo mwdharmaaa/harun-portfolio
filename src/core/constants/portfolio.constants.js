@@ -1,8 +1,6 @@
-import type { ProjectItem } from '../types/project.types';
+const BASE_URL = import.meta.env.BASE_URL || '/'
 
-const BASE_URL = import.meta.env.BASE_URL || '/';
-
-export const FEATURED_PROJECTS: readonly ProjectItem[] = [
+export const FEATURED_PROJECTS = [
   {
     id: 'vision-optics',
     title: 'Visionary Iris - AI Sensory Interface',
@@ -28,7 +26,7 @@ export const FEATURED_PROJECTS: readonly ProjectItem[] = [
     client: 'Atelier Lorem',
     year: '2026',
     role: 'Product Designer',
-    tools: ['Figma', 'TypeScript', 'Tailwind CSS', 'Radix UI'],
+    tools: ['Figma', 'JavaScript', 'Tailwind CSS', 'Radix UI'],
     liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
   },
   {
@@ -45,4 +43,4 @@ export const FEATURED_PROJECTS: readonly ProjectItem[] = [
     tools: ['Figma', 'Web Audio API', 'Canvas API', 'GLSL'],
     liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
   },
-] as const;
+]
