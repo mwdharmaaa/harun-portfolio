@@ -1,0 +1,43 @@
+import type { ProjectItem } from '../types/project.types';
+
+export const FEATURED_PROJECTS: readonly ProjectItem[] = [
+  {
+    id: 'vision-optics',
+    title: 'Visionary Iris - AI Sensory Interface',
+    category: 'Spatial Design & Bio-Telemetry',
+    image: '/images/portfolio-eye.jpg',
+    aspect: 'normal',
+    description: 'A sensory perception design system for high-resolution ocular diagnostics. Built with focus on micro-contrast typography, dark canvas spatial telemetry, and dark-mode ergonomics.',
+    client: 'Optics Intelligence Labs',
+    year: '2026',
+    role: 'Lead UI/UX Designer',
+    tools: ['Figma', 'React', 'Three.js', 'Tailwind CSS'],
+    liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
+  },
+  {
+    id: 'minimalist-studio',
+    title: 'Architectural Workspace & Editor',
+    category: 'Productivity & Creative Direction',
+    image: '/images/portfolio-glasses.jpg',
+    aspect: 'tall',
+    description: 'Minimalist desktop editorial interface engineered for focused industrial design workflows. Features distraction-free canvas palettes, subtle contrast dividers, and keyboard command docks.',
+    client: 'Atelier Monochrome',
+    year: '2026',
+    role: 'Product Designer & Design Technologist',
+    tools: ['Figma', 'TypeScript', 'Tailwind CSS', 'Radix UI'],
+    liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
+  },
+  {
+    id: 'dynamic-rhythm',
+    title: 'Kinetic Movement & Sound System',
+    category: 'Interaction Design & Audio Visuals',
+    image: '/images/portfolio-dance.jpg',
+    aspect: 'normal',
+    description: 'An interactive streaming interface exploring human kinetics, contemporary choreography, and high-contrast expressive visual rhythm.',
+    client: 'Metropolitan Arts Foundation',
+    year: '2025',
+    role: 'Interaction Designer',
+    tools: ['Figma', 'Web Audio API', 'Canvas API', 'GLSL'],
+    liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
+  },
+] as const;

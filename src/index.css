@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #1a333d;
+    --bg-secondary: #152932;
+    --bg-card: #182e37;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-line: #2e4d5a;
+    --text-primary: #ffffff;
+    --text-muted: #8ea9b4;
+    --text-dim: #5c7985;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: 'Syne', 'Space Grotesk', sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'Space Grotesk', monospace;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #142831;
+}
+::-webkit-scrollbar-thumb {
+  background: #284754;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3c6577;
+}
+
+/* Subtle background noise texture */
+.bg-canvas-texture {
+  background-color: #1a333d;
+  background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.03) 0%, transparent 75%),
+                    linear-gradient(to bottom, #1a333d 0%, #152830 100%);
+}
+
+/* Presentation chalkboard background texture */
+.bg-presentation-texture {
+  background-color: #122228;
+  background-image: 
+    radial-gradient(ellipse at center, rgba(38, 70, 81, 0.35) 0%, rgba(13, 23, 28, 0.95) 100%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.008) 0px, rgba(255, 255, 255, 0.008) 1px, transparent 1px, transparent 12px);
+}
