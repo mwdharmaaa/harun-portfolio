@@ -1,18 +1,18 @@
 import React from 'react';
-import { Github, Instagram, Twitter } from 'lucide-react';
 import { SOCIAL_LINKS } from '@/core/constants/navigation.constants';
+import { FacebookIcon, InstagramIcon, TwitterIcon, GithubIcon } from './SocialIcons';
 
 export const SocialSidebar: React.FC = () => {
-  const getIcon = (type: string) => {
+  const renderIcon = (type: string) => {
     switch (type) {
       case 'github':
-        return <Github className="w-4 h-4" />;
+        return <GithubIcon className="w-4 h-4" />;
       case 'instagram':
-        return <Instagram className="w-4 h-4" />;
+        return <InstagramIcon className="w-4 h-4" />;
       case 'twitter':
-        return <Twitter className="w-4 h-4" />;
+        return <TwitterIcon className="w-4 h-4" />;
       default:
-        return <Github className="w-4 h-4" />;
+        return <FacebookIcon className="w-4 h-4" />;
     }
   };
 
@@ -31,7 +31,7 @@ export const SocialSidebar: React.FC = () => {
             aria-label={link.name}
             className="text-slate-400 hover:text-white transition-all transform hover:-translate-y-0.5 hover:scale-110 p-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
           >
-            {getIcon(link.icon)}
+            {renderIcon(link.icon)}
           </a>
         ))}
       </div>
