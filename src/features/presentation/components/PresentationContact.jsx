@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
-import { CONTACT_INFO } from '@/core/constants/contact.constants';
+import { useState } from 'react'
+import { CONTACT_INFO } from '@/core/constants/contact.constants'
 
-interface PresentationContactProps {
-  onSuccessMessage: (name: string) => void;
-  onCopyNotice: (label: string) => void;
-}
-
-export const PresentationContact: React.FC<PresentationContactProps> = ({
+export const PresentationContact = ({
   onSuccessMessage,
   onCopyNotice,
 }) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim()) return;
-    onSuccessMessage(name);
-    setName('');
-    setPhone('');
-    setEmail('');
-    setMessage('');
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!name.trim()) return
+    onSuccessMessage(name)
+    setName('')
+    setPhone('')
+    setEmail('')
+    setMessage('')
+  }
 
   return (
     <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center px-2">
@@ -43,10 +38,10 @@ export const PresentationContact: React.FC<PresentationContactProps> = ({
             </span>
             <button
               onClick={() => {
-                navigator.clipboard.writeText(CONTACT_INFO.address);
-                onCopyNotice('Address copied to clipboard');
+                navigator.clipboard.writeText(CONTACT_INFO.address)
+                onCopyNotice('Address copied to clipboard')
               }}
-              className="text-[10px] sm:text-xs text-[#8fa7b3] hover:text-white transition-colors text-left"
+              className="text-[10px] sm:text-xs text-[#8fa7b3] hover:text-white transition-colors text-left cursor-pointer"
             >
               {CONTACT_INFO.address}
             </button>
@@ -58,10 +53,10 @@ export const PresentationContact: React.FC<PresentationContactProps> = ({
             </span>
             <button
               onClick={() => {
-                navigator.clipboard.writeText(CONTACT_INFO.email);
-                onCopyNotice('Email copied to clipboard');
+                navigator.clipboard.writeText(CONTACT_INFO.email)
+                onCopyNotice('Email copied to clipboard')
               }}
-              className="text-[10px] sm:text-xs text-[#8fa7b3] hover:text-white transition-colors text-left"
+              className="text-[10px] sm:text-xs text-[#8fa7b3] hover:text-white transition-colors text-left cursor-pointer"
             >
               {CONTACT_INFO.email}
             </button>
@@ -116,5 +111,5 @@ export const PresentationContact: React.FC<PresentationContactProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

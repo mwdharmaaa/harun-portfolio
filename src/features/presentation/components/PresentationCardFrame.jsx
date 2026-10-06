@@ -1,14 +1,7 @@
-import React from 'react';
-import { SocialSidebar } from '@/features/navigation/components/SocialSidebar';
-import { ScrollIndicator } from '@/features/navigation/components/ScrollIndicator';
+import { SocialSidebar } from '@/features/navigation/components/SocialSidebar'
+import { ScrollIndicator } from '@/features/navigation/components/ScrollIndicator'
 
-interface PresentationCardFrameProps {
-  children: React.ReactNode;
-  onNavigateProjects?: () => void;
-  onNavigateContact?: () => void;
-}
-
-export const PresentationCardFrame: React.FC<PresentationCardFrameProps> = ({
+export const PresentationCardFrame = ({
   children,
   onNavigateProjects,
   onNavigateContact,
@@ -45,5 +38,5 @@ export const PresentationCardFrame: React.FC<PresentationCardFrameProps> = ({
       <SocialSidebar position="absolute" compact={true} />
       <ScrollIndicator position="absolute" compact={true} />
     </div>
-  );
-};
+  )
+}

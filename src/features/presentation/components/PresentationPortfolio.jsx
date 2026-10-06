@@ -1,16 +1,11 @@
-import React from 'react';
-import { FEATURED_PROJECTS } from '@/core/constants/portfolio.constants';
+import { FEATURED_PROJECTS } from '@/core/constants/portfolio.constants'
 
-interface PresentationPortfolioProps {
-  onViewProjects: () => void;
-}
-
-export const PresentationPortfolio: React.FC<PresentationPortfolioProps> = ({
+export const PresentationPortfolio = ({
   onViewProjects,
 }) => {
-  const eyeImg = FEATURED_PROJECTS[0]?.image || '/images/portfolio-eye.jpg';
-  const glassesImg = FEATURED_PROJECTS[1]?.image || '/images/portfolio-glasses.jpg';
-  const danceImg = FEATURED_PROJECTS[2]?.image || '/images/portfolio-dance.jpg';
+  const eyeImg = FEATURED_PROJECTS[0]?.image || '/images/portfolio-eye.jpg'
+  const glassesImg = FEATURED_PROJECTS[1]?.image || '/images/portfolio-glasses.jpg'
+  const danceImg = FEATURED_PROJECTS[2]?.image || '/images/portfolio-dance.jpg'
 
   return (
     <div className="flex flex-col items-center justify-center w-full max-w-2xl mx-auto">
@@ -64,5 +59,5 @@ export const PresentationPortfolio: React.FC<PresentationPortfolioProps> = ({
         VIEW PROJECT
       </button>
     </div>
-  );
-};
+  )
+}

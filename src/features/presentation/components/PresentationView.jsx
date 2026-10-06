@@ -1,31 +1,25 @@
-import React, { useState } from 'react';
-import { PresentationCardFrame } from './PresentationCardFrame';
-import { PresentationHero } from './PresentationHero';
-import { PresentationPortfolio } from './PresentationPortfolio';
-import { PresentationContact } from './PresentationContact';
-import { ProjectModal } from '@/features/portfolio/components/ProjectModal';
-import { FEATURED_PROJECTS } from '@/core/constants/portfolio.constants';
-import type { ProjectItem } from '@/core/types/project.types';
+import { useState } from 'react'
+import { PresentationCardFrame } from './PresentationCardFrame'
+import { PresentationHero } from './PresentationHero'
+import { PresentationPortfolio } from './PresentationPortfolio'
+import { PresentationContact } from './PresentationContact'
+import { ProjectModal } from '@/features/portfolio/components/ProjectModal'
+import { FEATURED_PROJECTS } from '@/core/constants/portfolio.constants'
 
-interface PresentationViewProps {
-  onSuccessMessage: (name: string) => void;
-  onCopyNotice: (label: string) => void;
-}
-
-export const PresentationView: React.FC<PresentationViewProps> = ({
+export const PresentationView = ({
   onSuccessMessage,
   onCopyNotice,
 }) => {
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [selectedProject, setSelectedProject] = useState(null)
 
   const handleOpenFeatured = () => {
-    setSelectedProject(FEATURED_PROJECTS[1] || FEATURED_PROJECTS[0]);
-  };
+    setSelectedProject(FEATURED_PROJECTS[1] || FEATURED_PROJECTS[0])
+  }
 
-  const scrollToCard = (id: string) => {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const scrollToCard = (id) => {
+    const el = document.getElementById(id)
+    el?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <div className="min-h-screen w-full bg-presentation-texture py-12 sm:py-16 px-4 sm:px-8 flex flex-col items-center">
@@ -84,5 +78,5 @@ export const PresentationView: React.FC<PresentationViewProps> = ({
         onSelectProject={setSelectedProject}
       />
     </div>
-  );
-};
+  )
+}

@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const PresentationHero: React.FC = () => {
+export const PresentationHero = () => {
   return (
     <div className="flex flex-col items-center justify-center text-center">
       <p className="text-xs sm:text-sm font-semibold tracking-[0.35em] text-[#8ea8b4] uppercase mb-2 sm:mb-3">
@@ -13,5 +11,5 @@ export const PresentationHero: React.FC = () => {
         UI/UX DESIGNER
       </p>
     </div>
-  );
-};
+  )
+}
