@@ -1,11 +1,13 @@
 import type { ProjectItem } from '../types/project.types';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export const FEATURED_PROJECTS: readonly ProjectItem[] = [
   {
     id: 'vision-optics',
     title: 'Visionary Iris - AI Sensory Interface',
     category: 'Spatial Design & Bio-Telemetry',
-    image: '/images/portfolio-eye.jpg',
+    image: `${BASE_URL}images/portfolio-eye.jpg`,
     aspect: 'normal',
     description: 'A sensory perception design system for high-resolution ocular diagnostics. Built with focus on micro-contrast typography, dark canvas spatial telemetry, and dark-mode ergonomics.',
     client: 'Optics Intelligence Labs',
@@ -18,7 +20,7 @@ export const FEATURED_PROJECTS: readonly ProjectItem[] = [
     id: 'minimalist-studio',
     title: 'Architectural Workspace & Editor',
     category: 'Productivity & Creative Direction',
-    image: '/images/portfolio-glasses.jpg',
+    image: `${BASE_URL}images/portfolio-glasses.jpg`,
     aspect: 'tall',
     description: 'Minimalist desktop editorial interface engineered for focused industrial design workflows. Features distraction-free canvas palettes, subtle contrast dividers, and keyboard command docks.',
     client: 'Atelier Monochrome',
@@ -31,7 +33,7 @@ export const FEATURED_PROJECTS: readonly ProjectItem[] = [
     id: 'dynamic-rhythm',
     title: 'Kinetic Movement & Sound System',
     category: 'Interaction Design & Audio Visuals',
-    image: '/images/portfolio-dance.jpg',
+    image: `${BASE_URL}images/portfolio-dance.jpg`,
     aspect: 'normal',
     description: 'An interactive streaming interface exploring human kinetics, contemporary choreography, and high-contrast expressive visual rhythm.',
     client: 'Metropolitan Arts Foundation',
