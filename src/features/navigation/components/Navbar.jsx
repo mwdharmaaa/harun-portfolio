@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
-import { Menu, X, LayoutGrid, Monitor } from 'lucide-react';
-import { NAV_ITEMS } from '@/core/constants/navigation.constants';
-import type { ViewMode } from '@/core/types/navigation.types';
+import { useState } from 'react'
+import { Menu, X, LayoutGrid, Monitor } from 'lucide-react'
+import { NAV_ITEMS } from '@/core/constants/navigation.constants'
 
-interface NavbarProps {
-  activeSection: string;
-  viewMode: ViewMode;
-  onToggleViewMode: () => void;
-  onNavigate: (href: string) => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({
+export const Navbar = ({
   activeSection,
   viewMode,
   onToggleViewMode,
   onNavigate,
 }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    onNavigate(href);
-  };
+  const handleNavClick = (href) => {
+    setMobileMenuOpen(false)
+    onNavigate(href)
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 px-6 sm:px-12 md:px-16 py-6 sm:py-8 flex items-center justify-between pointer-events-auto transition-all duration-300">
@@ -29,8 +21,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       <a
         href="#hero"
         onClick={(e) => {
-          e.preventDefault();
-          handleNavClick('#hero');
+          e.preventDefault()
+          handleNavClick('#hero')
         }}
         className="group flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-sm"
         aria-label="Harun Erdogan Home"
@@ -43,14 +35,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Desktop Navigation Links */}
       <nav className="hidden sm:flex items-center gap-8 md:gap-12" aria-label="Main Navigation">
         {NAV_ITEMS.map((item) => {
-          const isActive = activeSection === item.id;
+          const isActive = activeSection === item.id
           return (
             <a
               key={item.id}
               href={item.href}
               onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.href);
+                e.preventDefault()
+                handleNavClick(item.href)
               }}
               className={`text-xs md:text-sm font-semibold tracking-[0.25em] transition-all duration-200 relative py-1 ${
                 isActive
@@ -63,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-cyan-400 rounded-full animate-fade-in" />
               )}
             </a>
-          );
+          )
         })}
 
         {/* View Mode Switcher (Card Mockup Mode vs Single Continuous Page) */}
@@ -116,8 +108,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               key={item.id}
               href={item.href}
               onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.href);
+                e.preventDefault()
+                handleNavClick(item.href)
               }}
               className="text-sm font-semibold tracking-[0.2em] text-slate-200 hover:text-white py-2 border-b border-slate-800/60"
             >
@@ -127,5 +119,5 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       )}
     </header>
-  );
-};
+  )
+}

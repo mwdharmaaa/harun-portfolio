@@ -1,13 +1,7 @@
-import React from 'react';
-import { Copy, Mail, MapPin } from 'lucide-react';
-import { CONTACT_INFO } from '@/core/constants/contact.constants';
+import { Copy, Mail, MapPin } from 'lucide-react'
+import { CONTACT_INFO } from '@/core/constants/contact.constants'
 
-interface ContactInfoProps {
-  onCopyEmail: (email: string) => void;
-  onCopyAddress: (address: string) => void;
-}
-
-export const ContactInfo: React.FC<ContactInfoProps> = ({ onCopyEmail, onCopyAddress }) => {
+export const ContactInfo = ({ onCopyEmail, onCopyAddress }) => {
   return (
     <div className="flex flex-col justify-center max-w-lg">
       {/* Title */}
@@ -34,7 +28,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ onCopyEmail, onCopyAdd
             </span>
             <button
               onClick={() => onCopyAddress(CONTACT_INFO.address)}
-              className="opacity-0 group-hover:opacity-100 p-1 text-slate-400 hover:text-white transition-opacity"
+              className="opacity-0 group-hover:opacity-100 p-1 text-slate-400 hover:text-white transition-opacity cursor-pointer"
               aria-label="Copy Address"
               title="Copy Address"
             >
@@ -58,7 +52,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ onCopyEmail, onCopyAdd
             </a>
             <button
               onClick={() => onCopyEmail(CONTACT_INFO.email)}
-              className="p-1 text-slate-400 hover:text-white transition-colors"
+              className="p-1 text-slate-400 hover:text-white transition-colors cursor-pointer"
               aria-label="Copy Email"
               title="Copy Email"
             >
@@ -68,5 +62,5 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ onCopyEmail, onCopyAdd
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

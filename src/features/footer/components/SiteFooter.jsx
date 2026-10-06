@@ -1,10 +1,9 @@
-import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react'
 
-export const SiteFooter: React.FC = () => {
+export const SiteFooter = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <footer className="w-full border-t border-slate-800/80 py-8 px-6 sm:px-12 md:px-16 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tech text-slate-500">
@@ -18,7 +17,7 @@ export const SiteFooter: React.FC = () => {
         <span>CRAFTED WITH PRECISION</span>
         <button
           onClick={scrollToTop}
-          className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+          className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors cursor-pointer"
           aria-label="Back to top"
         >
           <span>TOP</span>
@@ -26,5 +25,5 @@ export const SiteFooter: React.FC = () => {
         </button>
       </div>
     </footer>
-  );
-};
+  )
+}

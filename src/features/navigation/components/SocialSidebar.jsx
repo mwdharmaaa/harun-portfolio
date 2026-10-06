@@ -1,33 +1,27 @@
-import React from 'react';
-import { SOCIAL_LINKS } from '@/core/constants/navigation.constants';
-import { FacebookIcon, InstagramIcon, TwitterIcon, GithubIcon } from './SocialIcons';
+import { SOCIAL_LINKS } from '@/core/constants/navigation.constants'
+import { FacebookIcon, InstagramIcon, TwitterIcon, GithubIcon } from './SocialIcons'
 
-interface SocialSidebarProps {
-  position?: 'fixed' | 'absolute';
-  compact?: boolean;
-}
-
-export const SocialSidebar: React.FC<SocialSidebarProps> = ({
+export const SocialSidebar = ({
   position = 'fixed',
   compact = false,
 }) => {
-  const renderIcon = (type: string) => {
+  const renderIcon = (type) => {
     switch (type) {
       case 'github':
-        return <GithubIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
+        return <GithubIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />
       case 'instagram':
-        return <InstagramIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
+        return <InstagramIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />
       case 'twitter':
-        return <TwitterIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
+        return <TwitterIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />
       default:
-        return <FacebookIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />;
+        return <FacebookIcon className={compact ? 'w-3 h-3' : 'w-3.5 sm:w-4 h-3.5 sm:h-4'} />
     }
-  };
+  }
 
   const positionClasses =
     position === 'absolute'
       ? 'absolute left-4 sm:left-8 md:left-10 bottom-4 sm:bottom-8 z-20'
-      : 'fixed left-6 sm:left-10 md:left-14 bottom-8 sm:bottom-12 z-40';
+      : 'fixed left-6 sm:left-10 md:left-14 bottom-8 sm:bottom-12 z-40'
 
   return (
     <aside
@@ -49,5 +43,5 @@ export const SocialSidebar: React.FC<SocialSidebarProps> = ({
         ))}
       </div>
     </aside>
-  );
-};
+  )
+}

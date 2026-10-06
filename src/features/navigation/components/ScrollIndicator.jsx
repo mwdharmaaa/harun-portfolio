@@ -1,25 +1,19 @@
-import React from 'react';
-import { useScrollProgress } from '@/core/hooks/useScrollProgress';
+import { useScrollProgress } from '@/core/hooks/useScrollProgress'
 
-interface ScrollIndicatorProps {
-  position?: 'fixed' | 'absolute';
-  compact?: boolean;
-}
-
-export const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({
+export const ScrollIndicator = ({
   position = 'fixed',
   compact = false,
 }) => {
-  const progress = useScrollProgress();
+  const progress = useScrollProgress()
 
   const handleScrollDown = () => {
-    window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' });
-  };
+    window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' })
+  }
 
   const positionClasses =
     position === 'absolute'
       ? 'absolute right-4 sm:right-8 md:right-10 bottom-6 sm:bottom-8 z-20'
-      : 'fixed right-6 sm:right-10 md:right-14 bottom-8 sm:bottom-12 z-40';
+      : 'fixed right-6 sm:right-10 md:right-14 bottom-8 sm:bottom-12 z-40'
 
   return (
     <aside
@@ -39,5 +33,5 @@ export const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({
         </div>
       </div>
     </aside>
-  );
-};
+  )
+}

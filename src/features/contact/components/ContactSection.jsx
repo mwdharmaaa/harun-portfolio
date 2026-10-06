@@ -1,13 +1,7 @@
-import React from 'react';
-import { ContactInfo } from './ContactInfo';
-import { ContactForm } from './ContactForm';
+import { ContactInfo } from './ContactInfo'
+import { ContactForm } from './ContactForm'
 
-interface ContactSectionProps {
-  onSuccessMessage: (name: string) => void;
-  onCopyNotice: (label: string) => void;
-}
-
-export const ContactSection: React.FC<ContactSectionProps> = ({
+export const ContactSection = ({
   onSuccessMessage,
   onCopyNotice,
 }) => {
@@ -20,12 +14,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {/* Left Column Information */}
         <ContactInfo
           onCopyEmail={(email) => {
-            navigator.clipboard.writeText(email);
-            onCopyNotice('Email copied to clipboard');
+            navigator.clipboard.writeText(email)
+            onCopyNotice('Email copied to clipboard')
           }}
           onCopyAddress={(address) => {
-            navigator.clipboard.writeText(address);
-            onCopyNotice('Address copied to clipboard');
+            navigator.clipboard.writeText(address)
+            onCopyNotice('Address copied to clipboard')
           }}
         />
 
@@ -35,5 +29,5 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

@@ -1,13 +1,8 @@
-import React from 'react';
-import { Loader2, Send } from 'lucide-react';
-import { useContactForm } from '../hooks/useContactForm';
+import { Loader2, Send } from 'lucide-react'
+import { useContactForm } from '../hooks/useContactForm'
 
-interface ContactFormProps {
-  onSuccess: (name: string) => void;
-}
-
-export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
-  const { formData, errors, status, handleChange, handleSubmit } = useContactForm(onSuccess);
+export const ContactForm = ({ onSuccess }) => {
+  const { formData, errors, status, handleChange, handleSubmit } = useContactForm(onSuccess)
 
   return (
     <div className="w-full max-w-md bg-[#162c35]/85 border border-slate-700/60 rounded-md p-6 sm:p-10 shadow-2xl backdrop-blur-sm">
@@ -80,7 +75,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full sm:w-auto px-8 py-3 border border-slate-600/80 hover:border-cyan-400 bg-[#14262f] hover:bg-[#1c3845] text-xs font-mono-tech tracking-[0.25em] text-white uppercase rounded-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto px-8 py-3 border border-slate-600/80 hover:border-cyan-400 bg-[#14262f] hover:bg-[#1c3845] text-xs font-mono-tech tracking-[0.25em] text-white uppercase rounded-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group cursor-pointer"
           >
             {status === 'submitting' ? (
               <>
@@ -97,5 +92,5 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}

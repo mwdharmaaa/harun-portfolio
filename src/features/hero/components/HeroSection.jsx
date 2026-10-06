@@ -1,11 +1,6 @@
-import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react'
 
-interface HeroSectionProps {
-  onExplore: () => void;
-}
-
-export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore }) => {
+export const HeroSection = ({ onExplore }) => {
   return (
     <section
       id="hero"
@@ -38,5 +33,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore }) => {
         </button>
       </div>
     </section>
-  );
-};
+  )
+}
