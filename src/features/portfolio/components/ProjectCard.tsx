@@ -5,19 +5,28 @@ interface ProjectCardProps {
   project: ProjectItem;
   index: number;
   onSelect: (project: ProjectItem) => void;
+  compact?: boolean;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  project,
+  onSelect,
+  compact = false,
+}) => {
   const isCenter = project.aspect === 'tall';
+
+  const sizeClasses = compact
+    ? isCenter
+      ? 'w-24 sm:w-32 md:w-36 h-36 sm:h-44 md:h-52 z-10 -translate-y-3 sm:-translate-y-5 shadow-2xl shadow-black/80 ring-1 ring-white/10'
+      : 'w-20 sm:w-28 md:w-32 h-28 sm:h-36 md:h-44 opacity-90 hover:opacity-100 ring-1 ring-white/10'
+    : isCenter
+      ? 'w-44 sm:w-60 md:w-72 h-64 sm:h-84 md:h-96 z-10 -translate-y-3 sm:-translate-y-6 shadow-2xl shadow-black/80 ring-1 ring-white/15'
+      : 'w-36 sm:w-52 md:w-60 h-52 sm:h-72 md:h-84 opacity-90 hover:opacity-100 ring-1 ring-white/10';
 
   return (
     <div
       onClick={() => onSelect(project)}
-      className={`group relative overflow-hidden cursor-pointer transition-all duration-500 rounded-sm ${
-        isCenter
-          ? 'w-48 sm:w-60 md:w-72 h-64 sm:h-80 md:h-96 z-10 -translate-y-2 sm:-translate-y-4 shadow-2xl shadow-cyan-950/40 ring-1 ring-cyan-500/20'
-          : 'w-44 sm:w-56 md:w-64 h-56 sm:h-72 md:h-80 opacity-80 hover:opacity-100 ring-1 ring-white/10'
-      }`}
+      className={`group relative overflow-hidden cursor-pointer transition-all duration-500 rounded-none ${sizeClasses}`}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {

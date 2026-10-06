@@ -64,6 +64,9 @@
 .bg-presentation-texture {
   background-color: #122228;
   background-image: 
-    radial-gradient(ellipse at center, rgba(38, 70, 81, 0.35) 0%, rgba(13, 23, 28, 0.95) 100%),
-    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.008) 0px, rgba(255, 255, 255, 0.008) 1px, transparent 1px, transparent 12px);
+    radial-gradient(ellipse at center, rgba(34, 62, 73, 0.5) 0%, rgba(10, 19, 23, 0.95) 100%),
+    url('/images/chalkboard-bg.jpg');
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  background-blend-mode: overlay;
 }
