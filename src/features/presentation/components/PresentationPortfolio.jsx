@@ -40,15 +40,19 @@ export const PresentationPortfolio = ({
       </div>
 
       {/* Solid Black Horizontal Bar */}
-      <div className="w-full max-w-lg bg-black py-1.5 sm:py-2.5 px-6 text-center z-20 -mt-4 sm:-mt-6 shadow-2xl">
-        <h3 className="font-display text-lg sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white uppercase">
+      <a
+        href="./404.html"
+        className="w-full max-w-lg block bg-black py-1.5 sm:py-2.5 px-6 text-center z-20 -mt-4 sm:-mt-6 shadow-2xl hover:bg-neutral-900 transition-colors cursor-pointer group"
+        title="Explore Portfolio"
+      >
+        <h3 className="font-display text-lg sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white group-hover:text-cyan-300 uppercase transition-colors">
           MY PORTFOLIO
         </h3>
-      </div>
+      </a>
 
       {/* Subtitle */}
       <p className="text-[9px] sm:text-xs font-medium tracking-[0.25em] text-[#8ea8b4] uppercase mt-2 sm:mt-3 text-center">
-        HELLO I AM HARUN UI/UX DESIGNER
+        HELLO I AM PROJECT0001 UI/UX DESIGNER
       </p>
 
       {/* Framed Outline Button */}
