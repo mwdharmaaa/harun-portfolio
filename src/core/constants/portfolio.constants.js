@@ -13,7 +13,7 @@ export const FEATURED_PROJECTS = [
     year: '2026',
     role: 'Lead UI/UX Designer',
     tools: ['Figma', 'React', 'Three.js', 'Tailwind CSS'],
-    liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
+    liveUrl: './404.html',
   },
   {
     id: 'minimalist-studio',
@@ -27,7 +27,7 @@ export const FEATURED_PROJECTS = [
     year: '2026',
     role: 'Product Designer',
     tools: ['Figma', 'JavaScript', 'Tailwind CSS', 'Radix UI'],
-    liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
+    liveUrl: './404.html',
   },
   {
     id: 'dynamic-rhythm',
@@ -41,6 +41,6 @@ export const FEATURED_PROJECTS = [
     year: '2025',
     role: 'Interaction Designer',
     tools: ['Figma', 'Web Audio API', 'Canvas API', 'GLSL'],
-    liveUrl: 'https://github.com/mwdharmaaa/harun-portfolio',
+    liveUrl: './404.html',
   },
 ]
