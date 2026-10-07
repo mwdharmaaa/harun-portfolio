@@ -120,7 +120,7 @@ export const ProjectModal = ({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono-tech tracking-wider text-cyan-300 hover:text-cyan-200 border border-cyan-500/30 rounded bg-cyan-950/30 hover:bg-cyan-950/50 transition-colors"
             >
-              <span>SOURCE CODE</span>
+              <span>EXPLORE PROJECT</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           )}
