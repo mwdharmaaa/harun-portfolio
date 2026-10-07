@@ -13,8 +13,8 @@ export const HeroSection = ({ onExplore }) => {
         </p>
 
         {/* Hero Display Moniker */}
-        <h1 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-extrabold tracking-wider text-white leading-none drop-shadow-sm transform hover:scale-[1.01] transition-transform duration-300">
-          HARUN
+        <h1 className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tight text-white leading-none drop-shadow-sm transform hover:scale-[1.01] transition-transform duration-300">
+          PROJECT0001
         </h1>
 
         {/* Professional Subtitle */}

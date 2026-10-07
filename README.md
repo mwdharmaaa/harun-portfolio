@@ -1,6 +1,6 @@
-# Harun Portfolio - UI/UX Designer Landing Page
+# project0001 - UI/UX Designer Landing Page
 
-A minimalist dark petroleum teal portfolio landing page for Harun Erdogan (UI/UX Designer), crafted with React 19, TypeScript, Tailwind CSS, and Vite. Features dual-mode rendering: an interactive continuous viewport landing page and a Behance-inspired showcase board presentation.
+A minimalist dark petroleum teal portfolio landing page for project0001 (UI/UX Designer), crafted with React 19, Tailwind CSS, and Vite. Features dual-mode rendering: an interactive continuous viewport landing page and a Behance-inspired showcase board presentation.
 
 ## Core Features
 
@@ -8,7 +8,7 @@ A minimalist dark petroleum teal portfolio landing page for Harun Erdogan (UI/UX
   - **Immersive Mode**: Smooth-scrolling, high-contrast landing page with reactive ambient cursor glow, active section highlights, and responsive drawers.
   - **Showcase Board Mode**: Chalkboard presentation canvas displaying the three core mockup cards side by side as shown in the original design specification.
 - **Hero Display Section**:
-  - Monumental geometric typography (`HARUN`) with sub-pixel tracking and clean subtitle scale.
+  - Monumental geometric typography (`PROJECT0001`) with sub-pixel tracking and clean subtitle scale.
 - **Triptych Portfolio Gallery**:
   - Three photographic cards with elevated center aspect ratio, hover transitions, and dark monochrome aesthetics.
   - Interactive case study modal with project specifications, design tools, and source code links.

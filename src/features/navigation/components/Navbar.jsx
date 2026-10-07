@@ -17,7 +17,7 @@ export const Navbar = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 px-6 sm:px-12 md:px-16 py-6 sm:py-8 flex items-center justify-between pointer-events-auto transition-all duration-300">
-      {/* Brand Monogram HE */}
+      {/* Brand Monogram 0001 */}
       <a
         href="#hero"
         onClick={(e) => {
@@ -25,10 +25,10 @@ export const Navbar = ({
           handleNavClick('#hero')
         }}
         className="group flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-sm"
-        aria-label="Harun Erdogan Home"
+        aria-label="project0001 Home"
       >
         <span className="font-display text-2xl sm:text-3xl font-extrabold tracking-wider text-white group-hover:text-cyan-300 transition-colors">
-          HE
+          0001
         </span>
       </a>
 

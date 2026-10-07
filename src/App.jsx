@@ -59,7 +59,7 @@ export default function App() {
           <PortfolioSection />
           <ContactSection
             onSuccessMessage={(name) =>
-              addToast('Message Dispatched', `Thank you ${name}, Harun will get back to you shortly.`, 'success')
+              addToast('Message Dispatched', `Thank you ${name}, project0001 will get back to you shortly.`, 'success')
             }
             onCopyNotice={(msg) => addToast('Clipboard', msg, 'info')}
           />
@@ -73,7 +73,7 @@ export default function App() {
         <main className="relative z-10 pt-20">
           <PresentationView
             onSuccessMessage={(name) =>
-              addToast('Message Dispatched', `Thank you ${name}, Harun will get back to you shortly.`, 'success')
+              addToast('Message Dispatched', `Thank you ${name}, project0001 will get back to you shortly.`, 'success')
             }
             onCopyNotice={(msg) => addToast('Clipboard', msg, 'info')}
           />

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 echo "======================================================"
-echo "  Harun Portfolio - Automated Deployment"
+echo "  project0001 - Automated Deployment"
 echo "======================================================"
 
 echo "[*] Verifying Docker daemon status..."
@@ -26,7 +26,7 @@ docker compose down --remove-orphans || true
 docker compose up -d --build
 
 echo "[*] Polling container health status..."
-CONTAINER_NAME="harun-portfolio-web"
+CONTAINER_NAME="project0001-web"
 MAX_ATTEMPTS=20
 ATTEMPT=0
 

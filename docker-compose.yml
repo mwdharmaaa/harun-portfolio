@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: harun-portfolio-web
+    container_name: project0001-web
     restart: unless-stopped
     ports:
       - "3000:80"

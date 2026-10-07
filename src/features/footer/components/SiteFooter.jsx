@@ -8,9 +8,9 @@ export const SiteFooter = () => {
   return (
     <footer className="w-full border-t border-slate-800/80 py-8 px-6 sm:px-12 md:px-16 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tech text-slate-500">
       <div className="flex items-center gap-2">
-        <span className="text-white font-bold">HE</span>
+        <span className="text-white font-bold">0001</span>
         <span>/</span>
-        <span>HARUN ERDOGAN UI/UX PORTFOLIO</span>
+        <span>PROJECT0001 UI/UX PORTFOLIO</span>
       </div>
 
       <div className="flex items-center gap-6">
